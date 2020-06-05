@@ -1,0 +1,836 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(187, 185, 185, 0.7);
+}
+
+/* ****************************************
+**********START LANDING SECTION************
+*******************************************/
+
+section.landing-page-container {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+
+div.landing-page-wrapper {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+}
+
+h2#landing-page-heading2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.fa-user-circle {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: seagreen;
+    z-index: 2;
+}
+
+div.landing-inputs-wrapper {
+    background-color: #fff;
+    height: 12rem;
+    width: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+    padding: 220px 10px 10px 10px;
+    border-radius: 3px;
+    animation: fade 1.5s;
+    z-index: 1;
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+div.landing-inputs-wrapper input {
+    font-size: 17px;
+    width: 300px;
+    font-family: 'Josefin Sans', sans-serif;
+    display: block;
+    margin: 10px auto;
+    padding: 15px 10px;
+    background-color: transparent;
+    outline: none;
+    border-color: #000;
+    border-radius: 25px;
+    color: #000;
+}
+
+
+div.landing-inputs-wrapper input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(0, 0, 0, 0.7);
+}
+div.landing-inputs-wrapper input::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(0, 0, 0, 0.7);
+}
+
+div.landing-inputs-wrapper input:focus {
+    border: 2px solid rgb(39, 39, 39);
+}
+
+#start-quiz-btn {
+    font-family: 'Cabin', sans-serif;
+    width: 300px;
+    margin: 15px auto;
+    font-size: 18px;
+    display: block;
+    outline: none;
+    border-radius: 3px;
+    border: none;
+    letter-spacing: 1.5px;
+    padding: 13px;
+    background-color: seagreen;
+    color: #fff;
+    transition: linear .3s;
+}
+
+#start-quiz-btn:hover {
+    transform: translateX(-1px);
+    cursor: pointer;
+}
+/* ****************************************
+**********END LANDING SECTION************
+*******************************************/
+
+
+/* ****************************************
+**********START ADMIN SECTION************
+*******************************************/
+section.admin-panel-container {
+    height: 90vh;
+    width: 95%;
+    margin: 5vh 2.5%;
+    position: relative;
+    overflow: hidden;
+    animation: fade .8s;
+}
+
+div.admin-panel-wrapper {
+    background: #fff;
+    width: 60%;
+    height: 80%;
+    border-radius: 3px;
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    overflow: auto;
+}
+
+/* check */
+
+div.admin-panel-wrapper::-webkit-scrollbar {
+    background: rgba(0,0,0,.2);
+    width: 15px
+}
+
+div.admin-panel-wrapper::-webkit-scrollbar-thumb {
+    background-color: #333; 
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+div.header h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    color: seagreen;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#admin-logout-btn {
+    font-family: 'Cabin', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    margin: 20px;
+    width: 110px;
+    color: #fff;
+    background: seagreen;
+    letter-spacing: 1.5px;
+    border: 1px solid seagreen;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: linear .3s;
+}
+
+#admin-logout-btn:hover {
+    color: seagreen;
+    background: transparent;
+    border: 1px solid seagreen;
+    font-weight: bold;
+}
+
+#question-update-btn, #question-delete-btn {
+    font-family: 'Cabin', sans-serif;
+    padding: 10px;
+    margin-left: 1rem;
+    width: 110px;
+    background: seagreen;
+    color: #fff;
+    outline: none;
+    border: 1px solid seagreen;
+    border-radius: 3px;
+    letter-spacing: 1.5px;
+    visibility: hidden;
+    transition: border .3s, background .3s, box-shadow .3s;
+}
+
+#question-update-btn:hover, #question-delete-btn:hover {
+    color: seagreen;
+    background: transparent;
+    border: 1px solid seagreen;
+    font-weight: bold;
+}
+
+#new-question-text {
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px 0 10px 10px;
+    width: 70%;
+    height: 4rem;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 7px;
+    font-size: 18px;
+    border: 1px solid seagreen;
+    border-radius: 2px;
+    color: seagreen;
+    font-weight: 400;
+    outline: none;
+    transition: linear .5s;
+}
+
+#new-question-text:focus {
+    border: .5px solid #fff;
+    background: rgba(135, 216, 170, 0.122);
+    color: #000;
+}
+
+#new-question-text::-webkit-input-placeholder {
+    font-size: 1rem;
+}
+
+div.admin-option-wrapper {
+    position: relative;
+    width: 70px;
+}
+
+div.forms-wrapper {
+    margin-top: -1rem;
+}
+
+div.forms-wrapper input[type='text'] {
+    width: 300px;
+    font-size: 13px;
+    margin: 10px 0 10px 35px;
+    display: block;
+    padding: 7px 5px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid seagreen;
+    background: seagreen;
+    color: #fff;
+    transition: linear .5s;
+}
+
+div.forms-wrapper input[type='text']:focus {
+    border: .5px solid #fff;
+    color: #fff;
+}
+
+div.forms-wrapper input[type='radio'] {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+}
+
+#question-insert-btn {
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    width: 120px;
+    border-radius: 3px;
+    margin-top: 0.8rem;
+    background: seagreen;
+    color: #fff;
+    letter-spacing: 1.5px;
+    outline: none;
+    border: 1px solid seagreen;
+    margin-left: 35px;
+    transition: background .3s, border .3s, box-shadow .3s;
+}
+
+#question-insert-btn:hover {
+    color: seagreen;
+    background: transparent;
+    cursor: pointer;
+}
+
+#question-clear-btn {
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    width: 120px;
+    border-radius: 3px;
+    background: seagreen;
+    color: #fff;
+    letter-spacing: 1.5px;
+    outline: none;
+    border: 1px solid seagreen;
+    margin-left: 80px;
+    position: absolute;
+    right: 30px;
+    bottom: 4.8rem;
+    transition: background .3s, border .3s, box-shadow .3s;
+}
+
+#question-clear-btn:hover {
+    cursor: pointer;
+    background: transparent;
+    color: seagreen;
+}
+
+div.results-list-container {
+    background: #fff;
+    width: 30%;
+    height: 80%;
+    position: absolute;
+    right: 35px;
+    top: 0.5%;
+    border-radius: 3px;
+}
+
+/* .clear {
+    overflow: hidden;
+} */
+
+div.results-list-container h2 {
+    color: seagreen;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    padding: 20px;
+    float: left;
+    margin: 10px;
+}
+
+#results-clear-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    margin: 30px;
+    float: right;
+    letter-spacing: 1.5px;
+    background: seagreen;
+    color: #fff;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid seagreen;
+    font-size: 16px;
+    transition: linear .3s;
+}
+
+#results-clear-btn:hover {
+    background: transparent;
+    color: seagreen;
+    cursor: pointer;
+}
+
+div.results-list-container::-webkit-scrollbar {
+    background: rgba(0,0,0,.2);
+    width: 15px
+}
+
+div.results-list-container::-webkit-scrollbar-thumb {
+    background-color: #333;  
+}
+
+
+div.results-list-container p {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 90%;
+    padding: 5px;
+    margin: 10px auto;
+    text-align: center;
+    overflow: hidden;
+    color: seagreen;
+    border: 1px solid seagreen;
+    border-radius: 3px;
+    text-transform: capitalize;
+    text-align: center;
+    transition: background .3s, border .3s;
+}
+
+div.results-list-container p:hover {
+    color: #fff;
+    background: seagreen;
+}
+
+div.results-list-container p span {
+    float: left;
+    font-size: 17px;
+    margin: 5px;
+}
+
+.delete-result-btn {
+    display: block;
+    float: right;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 1.5px;
+    background: seagreen;
+    color: #fff;
+    outline: none;
+    border: 1px solid seagreen;
+    padding: 5px 10px;
+    border-radius: 25px;
+    transition: background .3s, border .3s;
+}
+
+.delete-result-btn:hover {
+    background: #fff;
+    color: seagreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div.inserted-questions-wrapper {
+    background: #fff;
+    width: 60%;
+    height: 20%;
+    position: absolute;
+    bottom: -15px;
+    left: 40px;
+    border-radius: 3px;
+    overflow: auto;
+}
+
+div.inserted-questions-wrapper::-webkit-scrollbar {
+    background: rgba(0,0,0,.2);
+    width: 15px;
+}
+
+div.inserted-questions-wrapper::-webkit-scrollbar-thumb {
+    background-color: #333; 
+}
+
+div.inserted-questions-wrapper p {
+    color: seagreen;
+    border: 1px solid seagreen;
+    border-radius: 3px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px 10px;
+    transition: background .3s;
+}
+
+div.inserted-questions-wrapper p:hover {
+    background: seagreen;
+    color: #fff;
+}
+
+div.inserted-questions-wrapper p span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+div.inserted-questions-wrapper p:hover {
+    color: #fff;
+}
+
+div.inserted-questions-wrapper p button {
+    float: right;
+    padding: 3px 10px;
+    margin: -2.7px;
+    background: seagreen;
+    color: #fff;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid seagreen;
+    letter-spacing: 1.5px;
+    font-family: 'Cabin', sans-serif;
+    transition: linear .3s;
+}
+div.inserted-questions-wrapper p button:hover {
+    background-color: #fff;
+    color: seagreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* ****************************************
+**********END ADMIN SECTION************
+*******************************************/
+
+/* ****************************************
+**********START QUIZ SECTION************
+*******************************************/
+section.quiz-container {
+    background: linear-gradient(to bottom right,rgba(0, 0, 0, .35), rgba(0, 0, 0, .75)), url("images/landing-bg.jpg") center/cover no-repeat;
+    height: 90vh;
+    width: 95%;
+    margin: 5vh 2.5%;
+    box-shadow: 0px 10px 25px #aaa;
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+}
+
+div.quiz-wrapper {
+    position: absolute;
+    background: rgba(0, 0, 0, .65);
+    margin: 5vh 5% 5vh 3%;
+    border-radius: 3px;
+    width: 60%;
+    height: 80vh;
+    overflow: auto;
+}
+
+div.quiz-wrapper::-webkit-scrollbar {
+    background: rgba(0, 0, 0, .2);
+    width: 15px;
+}
+
+div.quiz-wrapper::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+h2#asked-question-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    width: 90%;
+    color: #eee;
+    text-indent: 15px;
+    margin: 30px auto;
+}
+
+div.instant-answer-container {
+    margin: auto;
+    width: 80%;
+    position: relative;
+    opacity: 0;
+}
+
+div#instant-answer-wrapper {
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+div#instant-answer-wrapper::before {
+    content: '';
+    position: absolute;
+    border: medium solid #fff;
+    border-color: transparent #eee;
+    border-width: 8px 8px 8px 0;
+    left: 43px;
+    bottom: 1rem;
+}
+
+div#instant-answer-wrapper p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #eee;
+    float: left;
+    width: 80%; 
+     margin-top: 8px;
+}
+
+#emotion {
+    display: block;
+    float: left;
+    margin: 14px 15px;
+}
+
+div.red {
+    border: 1px solid #e62739;
+    background-color: rgba(250, 0, 0, .3);
+}
+
+div.green {
+    border: 1px solid #4CAF50;
+    background-color: rgba(0, 250, 0, .2);
+}
+
+div#instant-answer-wrapper button {
+    font-family: 'Cabin', sans-serif;
+    padding: 4px 10px;
+    background-color: #222;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    color: #eee;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    float: right;
+    outline: none;
+    transition: background .3s, color .3s, border .3s;
+}
+
+div#instant-answer-wrapper button:hover {
+    background: #777;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+div.quiz-options-wrapper {
+    margin: 40px auto 0 auto;
+    width: 80%;
+}
+
+div.quiz-options-wrapper div {
+    color: #444;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+    animation: fade 1s;
+    border-radius: 3px;
+    transition: all .5s;
+}
+
+div.quiz-options-wrapper div:hover {
+    cursor: pointer;
+    background: #555;
+    border: 1px solid #fff;
+    bottom: .5px;
+}
+div.quiz-options-wrapper div:hover > p {
+    color: #fff;
+}
+
+div.quiz-options-wrapper div span {
+    color: #eee;
+    background: rgba(65, 179, 163, .5);
+    font-size: 25px;
+    margin-left: 20px;
+    /* text-align: center; */
+    font-weight: bold;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    display: block;
+    float: left;
+    border-radius: 3px;
+    transition: all .2s;
+}
+
+div.quiz-options-wrapper div span::before {
+    content: '';
+    position: absolute;
+    border: medium solid #fff;
+    border-width: 10px;
+    border-color: #eee transparent transparent;
+    left: 31px;
+    bottom: 0;
+    transition: all .2s;
+    z-index: 1;
+}
+
+div.quiz-options-wrapper div:hover > span {
+    border: 1px solid #ddd;
+    color: #fff;
+    background-color: rgba(65, 179, 163, .7);
+}
+
+/* div.quiz-options-wrapper div:hover > span::before {
+    border-color: #fff transparent transparent;
+} */
+
+div.quiz-options-wrapper div p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #eee;
+    /* margin left is static in absent of this */
+    float: left;
+    margin-left: 10px;
+    transition: all .3s;
+}
+
+
+/*PROGRES BAR*/
+div.progressBar {
+    font-family: 'Cormorant Garamond', serif;
+    background: rgba(0, 0, 0, .65);
+    position: absolute;
+    right: 9%;
+    width: 300px;
+    height: 300px;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+div.progressBar progress {
+    position: absolute;
+    width: 250px;
+    height: 25px;
+    display: block;
+    bottom: 40px;
+}
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress:not([value]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background: #aaa;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) inset;
+    border-radius: 25px;
+    border: 1px solid #eee;
+}
+progress::-webkit-progress-value {
+    background-color: #444;
+    border-radius: 25px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #444;
+    border-radius: 3px;
+}
+
+p#progress {
+
+    position: absolute;
+    top: 7rem;
+    padding: 30px 40px;
+    font-size: 2rem;
+    color: #eee;
+    font-weight: bold;
+}
+
+/* div.quiz-wrapper {
+    background: #fff;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;    
+}
+
+div.quiz-options-wrapper p{
+    font-size: 16px;
+    color: 000;
+    padding: 15px;
+    line-height: 28px;
+    background: #ccc;
+    font-weight: 400;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+div.quiz-wrapper::-webkit-scrollbar {
+    background: rgba(0,0,0,.2);
+    width: 15px
+}
+
+div.quiz-wrapper::-webkit-scrollbar-thumb {
+    background-color: #333;  
+} */
+
+/* ****************************************
+**********END QUIZ SECTION************
+*******************************************/
+
+/* ****************************************
+**********START FINAL RESULT PAGE************
+*******************************************/
+
+
+/* ****************************************
+**********END QUIZ SECTION************
+*******************************************/
+section.final-result-container {
+    font-family: 'Raleway', sans-serif;
+    height: 90vh;
+    width: 95%;
+    background: linear-gradient(to bottom right,rgba(0, 0, 0, .35), rgba(0, 0, 0, .75)), url("images/final-bg.jpeg") no-repeat center/cover;
+    margin: 5vh 2.5%;
+    border-radius: 3px;
+    position: relative;
+    animation: fade .8s;
+    box-shadow: 0px 10px 25px #aaa;
+}
+
+div.final-result-wrapper {
+    height: 90vh;
+    width: 90%;
+    margin: 5vh 2.5%;
+    position: relative;
+}
+
+div.final-result {
+    width: 70%;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, .65);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    overflow: auto;
+}
+
+button#final-logout-btn {
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    color: #eee;
+    letter-spacing: 1.5px;
+    background-color: #222;
+    width: 110px;
+    outline: none;
+    border: 1px solid #ccc;
+    float: right;
+    border-radius: 25px;
+    transition: all .3s;
+}
+
+button#final-logout-btn:hover {
+    background-color: #555;
+    border: 1px solid #fff;
+}
+
+h2#final-score-text {
+    color: #eee;
+    text-align: center;
+    font-size: 25px;
+    margin: 230px auto 0 auto;
+    width: 80%;
+}
